@@ -6,12 +6,12 @@ jobs:
     runs-on: ubuntu-latest
     name: returns the number square
     steps:
-      - name: Checkout 
-      users: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
       - name: fetch num squared
-      id: get_square
-      uses: ./
-      with:
-        num: 11
+        id: get_square
+        uses: ./
+        with:
+          num: 11
       - name: print the square
-      run: echo "${{ steps.get_square.outputs.num_squared}}"
+        run: echo "${{ steps.get_square.outputs.num_squared}}"
